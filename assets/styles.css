@@ -1,0 +1,110 @@
+body {
+  font-family: "Montserrat";
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  margin-right: 77%;
+}
+
+.quadrado {
+  height: 30px;
+  background: #ff0000;
+  display: flex;
+  align-items: center;
+  border: solid 2px #eb0000;
+  border-radius: 5px;
+  justify-content: center;
+}
+.saldo {
+  height: 30px;
+  background: #aaaaaa48;
+  display: flex;
+  align-items: center;
+  border: solid 2px #eb0000;
+  border-radius: 5px;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.quadrado a {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
+  margin: auto;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.navbar {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.perfil-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 37px;
+}
+
+.perfil-btn img {
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 1px;
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-list {
+  position: absolute;
+  top: 95%;
+  left: 26%;
+  transform: translateX(-50%);
+  border: 1px solid #ccc;
+  background: white;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  min-width: 150px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.list {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  cursor: pointer;
+}
+
+.list:last-child {
+  border-bottom: none;
+}
+
+.list:hover {
+  background: #f2f2f2;
+}
