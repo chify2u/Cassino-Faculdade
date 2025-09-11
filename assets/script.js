@@ -85,3 +85,17 @@ window.onload = function () {
     }
   });
 };
+function openOverlay() {
+  document.getElementById("overlay").style.display = "flex";
+}
+
+function closeOverlay() {
+  document.getElementById("overlay").style.display = "none";
+}
+function abrirOverlay() {
+  document.getElementById("overlay-login").style.display = "flex";
+}
+
+function fecharOverlay() {
+  document.getElementById("overlay-login").style.display = "none";
+}
