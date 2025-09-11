@@ -16,6 +16,14 @@ a {
   margin-right: 77%;
 }
 
+h1 {
+  color: white;
+  font-size: 24px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .quadrado {
   height: 30px;
   background: #ff0000;
@@ -30,7 +38,7 @@ a {
   background: #aaaaaa48;
   display: flex;
   align-items: center;
-  border: solid 2px #eb0000;
+  border: solid 2px #000000;
   border-radius: 5px;
   justify-content: center;
   padding-left: 15px;

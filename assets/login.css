@@ -151,7 +151,7 @@ input[type="submit"]:hover {
   color: #ffd700;
 }
 
-.toggle-senha {
+.toggle-senha-login {
   display: flex;
   right: 20px;
   margin-left: 10%;
