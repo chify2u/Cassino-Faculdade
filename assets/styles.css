@@ -2,9 +2,12 @@ body {
   font-family: "Montserrat";
   margin: 0;
   padding: 0;
-  background-color: black;
+  background: linear-gradient(180deg, #2e2e2e 0%, #1a1a1a 50%, #000000 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
 }
-
 a {
   text-decoration: none;
   color: inherit;
@@ -60,12 +63,13 @@ h1 {
 }
 .navbar {
   width: 100%;
-  padding: 10px 20px;
-  background-color: #ffffff;
+  padding: 5px 10px;
+  background: linear-gradient(180deg, #000000 0%, #141414 50%, #1a1a1a 100%);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .perfil-btn {
@@ -115,4 +119,48 @@ h1 {
 
 .list:hover {
   background: #f2f2f2;
+}
+.welcome-banner {
+  background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #121212 100%);
+  width: 1024px;
+  height: 300px;
+  margin: auto;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Montserrat";
+  gap: 10px;
+}
+
+.content-left {
+  max-width: 50%;
+}
+
+.content-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.content-left p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.img-container {
+  width: 400px;
+  display: flex;
+  height: 300px;
+  justify-content: flex-end;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }

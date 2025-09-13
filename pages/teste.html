@@ -1,74 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tela Sobreposta</title>
+    <title>Carrossel Simples</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Conteúdo principal */
-      .conteudo {
-        padding: 20px;
-        text-align: center;
-      }
-
-      /* Tela sobreposta (overlay) */
-      .overlay {
-        position: fixed; /* fica preso na tela toda */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7); /* fundo escuro */
-        display: none; /* escondido por padrão */
+      .welcome-banner {
+        background: linear-gradient(354deg, #232f39 6.66%, #484c54 99.72%);
+        width: 1024px;
+        height: 330px;
+        display: flex;
         justify-content: center;
         align-items: center;
+        margin: auto;
+        background-image: url("/includes/teste1.jpg");
+        background-size: cover;
       }
 
-      /* Caixa que aparece no centro */
-      .overlay-content {
-        background: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        width: 300px;
+      .botoes {
         text-align: center;
+        margin-top: 10px;
       }
 
       button {
-        padding: 10px 20px;
-        margin-top: 10px;
-        cursor: pointer;
+        padding: 8px 12px;
+        margin: 0 5px;
       }
     </style>
   </head>
   <body>
-    <div class="conteudo">
-      <h1>Minha Página</h1>
-      <p>Esse é o conteúdo normal.</p>
-      <button onclick="abrirOverlay()">Abrir Tela Sobreposta</button>
-    </div>
-
-    <!-- Tela sobreposta -->
-    <div class="overlay" id="overlay">
-      <div class="overlay-content">
-        <h2>Tela Sobreposta</h2>
-        <p>Essa tela aparece em cima da outra.</p>
-        <button onclick="fecharOverlay()">Fechar</button>
+    <div class="welcome-banner">
+      <div class="carrossel">
+        <div class="carrossel-imagens" id="carrossel-imagens">img</div>
       </div>
     </div>
 
+    <div class="botoes">
+      <button onclick="voltar()">←</button>
+      <button onclick="avancar()">→</button>
+    </div>
+
     <script>
-      function abrirOverlay() {
-        document.getElementById("overlay").style.display = "flex";
+      let indice = 0;
+
+      function atualizarCarrossel() {
+        const carrossel = document.getElementById("carrossel-imagens");
+        carrossel.style.transform = `translateX(${-500 * indice}px)`;
       }
 
-      function fecharOverlay() {
-        document.getElementById("overlay").style.display = "none";
+      function avancar() {
+        const total = document.querySelectorAll(
+          "#carrossel-imagens img"
+        ).length;
+        indice = (indice + 1) % total;
+        atualizarCarrossel();
+      }
+
+      function voltar() {
+        const total = document.querySelectorAll(
+          "#carrossel-imagens img"
+        ).length;
+        indice = (indice - 1 + total) % total;
+        atualizarCarrossel();
       }
     </script>
   </body>
