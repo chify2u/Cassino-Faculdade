@@ -13,14 +13,17 @@
   <body>
     <div class="navbar">
       <div class="container">
+
+        <!-- Login -->
         <div class="login">
           <button class="open-button-login" onclick="abrirOverlay()">Login</button>
         </div>
+      
 <div class="overlay-login" id="overlay-login">
       <div class="overlay-content-login">
         <button class="close-overlay-login" onclick="fecharOverlay()"><img class='fechar-login' src="/includes/fechar.png" alt="" srcset=""></button>
           <div class="quadrado"></div>
-    <form id="cadastroForm1" method="POST" action="#" class="login-box">
+    <form id="" method="POST" action="#" class="login-box">
       <div class="login-form">
         <h1>Faça login na conta</h1>
       </div>
@@ -36,14 +39,14 @@
         <div class="form-row-senha">
           <input class="input-senha"
             type="password"
-            id="password"
+            id="password-login"
             name="password"
             placeholder="Senha"
             required
           />
           <div class="toggle-senha-login">
             <img
-              src="/includes/icons8-eye-30.png"
+              src="/includes/olho_aberto.png"
               id="toggleSenha"
               alt="Mostrar senha"
             />
@@ -68,6 +71,7 @@
       </div>
     </div>
 
+<!-- Cadastro -->
 
         <div class="cadastro">
           <button class="open-button-cadastro" onclick="openOverlay()">Cadastre-se</button>
@@ -110,8 +114,9 @@
           name="password"
           placeholder="Senha"
           required
-        /> <div class="toggle-senha">
-          <img src="/includes/icons8-eye-30.png" id="toggleSenha" alt="Mostrar senha">
+        /> 
+        <div class="toggle-senha">
+          <img src="/includes/olho_aberto.png" id="toggle_Senha" alt="Mostrar senha">
         </div>
 
       </div><br>
@@ -126,7 +131,7 @@
             required
           />
           <div class="toggle-senha">
-          <img src="/includes/icons8-eye-30.png" id="toggleSenha1" alt="Mostrar senha">
+          <img src="/includes/olho_aberto.png" id="toggle-confirm" alt="Mostrar senha">
 </div>
         <div id="barra-senha"></div>
       
@@ -141,16 +146,13 @@
         <p class="p-cadastro">Já tem uma conta? <a href="/login">Faça login</a></p>
       </div>
     </form>
-
-</div>
-        </div>
-
-
-
-</div>
       </div>
+     </div>
     </div>
+  </div>
+</div>
+<script src="/assets/script.js"></script>
 
-    <script src="/assets/script.js"></script>
+
   </body>
 </html>

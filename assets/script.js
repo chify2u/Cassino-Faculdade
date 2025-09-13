@@ -1,31 +1,45 @@
 window.onload = function () {
-  // Toggle senha
+  // Toggle senha Login
+  const senha_login = document.getElementById("password-login");
+  const toggle_login = document.getElementById("toggleSenha");
+
+  toggle_login.addEventListener("click", () => {
+    if (senha_login.type === "password") {
+      senha_login.type = "text";
+      toggle_login.src = "/includes/olho_fechado.png";
+    } else {
+      senha_login.type = "password";
+      toggle_login.src = "/includes/olho_aberto.png";
+    }
+  });
+  // Toggle senha Cadastro e Confirmacão de senhas
   const senha = document.getElementById("password");
-  const toggle = document.getElementById("toggleSenha");
+  const toggle = document.getElementById("toggle_Senha");
 
   toggle.addEventListener("click", () => {
     if (senha.type === "password") {
       senha.type = "text";
-      toggle.src = "/includes/icons8-hide-30.png";
+      toggle.src = "/includes/olho_fechado.png";
     } else {
       senha.type = "password";
-      toggle.src = "/includes/icons8-eye-30.png";
+      toggle.src = "/includes/olho_aberto.png";
     }
   });
 
   const confirmSenha = document.getElementById("confirm-password");
-  const toggleConfirm = document.getElementById("toggleSenha1");
+  const toggleConfirm = document.getElementById("toggle-confirm");
 
   toggleConfirm.addEventListener("click", () => {
     if (confirmSenha.type === "password") {
       confirmSenha.type = "text";
-      toggleConfirm.src = "/includes/icons8-hide-30.png";
+      toggleConfirm.src = "/includes/olho_fechado.png";
     } else {
       confirmSenha.type = "password";
-      toggleConfirm.src = "/includes/icons8-eye-30.png";
+      toggleConfirm.src = "/includes/olho_aberto.png";
     }
   });
-  // Máscara e validação de CPF
+
+  // CPF
   const cpfInput = document.getElementById("cpf");
   const cpfError = document.getElementById("cpf-error");
 
