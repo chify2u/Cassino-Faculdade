@@ -1,92 +1,137 @@
 body {
-  background-color: #0d0d0d;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   font-family: "Montserrat";
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin-right: 12%;
-  min-height: 100vh;
-  overflow: none;
+  background: linear-gradient(180deg, #2e2e2e 0%, #1a1a1a 50%, #000000 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
 }
-
-h1 {
-  font-family: "Montserrat";
-  font-style: normal;
-}
-
-.quadrado {
+/* Navbar */
+.navbar {
   width: 100%;
-  height: 100vh;
-  background: #292929;
+  padding: 15px 20px;
+  background: linear-gradient(180deg, #000000 0%, #141414 50%, #1a1a1a 100%);
   display: flex;
-  margin-right: 60%;
-  border-right: solid 4px #1f1f1f;
-  box-shadow: 0px 0px 10px rgba(218, 196, 3, 0.788);
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.cadastro-form {
-  background-color: #1a1a1a;
-  border: 2px solid #292929;
+.conteudo {
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+/* Botões de Login e Cadastro */
+.login {
+  height: 30px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  border: solid 2px #2c2c2c;
+  box-shadow: 0px 3px 6px #1a1a1a;
+  border-radius: 5px;
+  justify-content: center;
+}
+.cadastro {
+  height: 30px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  border: solid 2px #2c2c2c;
+  box-shadow: 0px 3px 6px #2c2c2c;
+  border-radius: 5px;
+  justify-content: center;
+}
+/* Abrir Cadastro */
+.open-button-cadastro {
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
+  margin: auto;
+  font-weight: bold;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/*Overlay de Cadastro*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-content {
+  background-color: #121212;
+  border: 2px solid #2c2c2c;
   border-radius: 15px;
-  box-shadow: 0px 3px 6px rgba(235, 235, 235, 0.2);
+  box-shadow: 0px 3px 6px #2c2c2c;
   padding: 20px;
   width: 100%;
   max-width: 400px;
   position: absolute;
   height: 82%;
 }
+/*Fechar Overlay de Cadastro*/
+.close-overlay-cadastro {
+  display: flex;
+  justify-content: flex-end;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  margin-left: 95%;
+}
 
+.fechar-cadastro {
+  width: 20px;
+  height: 20px;
+}
 ::placeholder {
-  color: #d4af37;
+  color: #b3b3b3;
   opacity: 1;
 }
-
-/* 
-form {
-  background-color: #2d00f5;
-  padding: 20px;
-  width: 15px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(10, 7, 134, 0.1);
-}
-
-
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 15px;
-  color: #d4af37;
-  pointer-events: none;
-  transition: 0.3s ease;
-  padding: 0 4px;
-*/
-
-label {
-  font-size: 14px;
-  color: #d4af37;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-  font-family: "Montserrat";
-  cursor: pointer;
-  position: absolute;
-  font-family: "Montserrat";
-}
-
 .cadastro-text {
   text-align: center;
-  color: #d4af37;
+  color: #ffffff;
   font-family: "Montserrat";
   margin-bottom: 50px;
 }
+/* Texto de Cadastro */
+label {
+  font-size: 14px;
+  color: #b3b3b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: "Montserrat";
+  cursor: pointer;
+  position: absolute;
+  margin-top: 12%;
+}
 
-p {
+.p-cadastro {
   color: #fafafa;
   margin-top: 38%;
 }
@@ -96,72 +141,46 @@ p {
   flex-direction: column;
   gap: 20px;
 }
-
+/* Linha do Formulário */
 .form-row {
   display: flex;
   flex-direction: column;
 }
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+/* Formulário de Cadastro */
+.input-cadastro {
   padding: 10px;
   border: 2px solid #202020;
   border-radius: 7px;
   outline: none;
   font-size: 15px;
-  background-color: #615b5b;
+  background-color: #1e1e1e;
   height: 20px;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-  border-color: #ffd700;
-}
-
-.form-button {
-  display: flex;
-  justify-content: center;
-}
-
-input[type="submit"],
-button {
-  position: absolute;
-  background: #d4af37;
-  color: #141414;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  margin-top: 19%;
-  height: 50px;
-  width: 50%;
-}
-
-input[type="submit"]:hover {
-  background-color: #ffd700;
-  color: #004e2c;
+  border-color: #ffffff;
 }
 
 .link-ext {
   text-align: center;
   margin-top: 10px;
+  display: flex;
 }
 
 .link-ext a {
-  color: #d4af37;
+  color: #b3b3b3;
   text-decoration: none;
   font-weight: bold;
 }
 
 .link-ext a:hover {
-  color: #ffd700;
+  color: #b3b3b3;
 }
-
+/* Mostrar e esconder senha */
 .toggle-senha {
   display: flex;
   right: 20px;
@@ -174,6 +193,31 @@ input[type="submit"]:hover {
   outline: none;
   height: 24px;
 }
+
+.form-button-cadastro {
+  display: flex;
+  justify-content: center;
+}
+/* Botão de Enviar Cadastro */
+.submit-cadastro {
+  justify-content: center;
+  background: #ffffff;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 19%;
+  height: 50px;
+  width: 50%;
+}
+
+.submit-cadastro:hover {
+  background-color: #a5a5a5;
+  color: #000000;
+}
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #615b5b inset;
   -webkit-text-fill-color: white;
@@ -183,4 +227,292 @@ input:-webkit-autofill {
 input:-moz-autofill {
   box-shadow: 0 0 0px 1000px #615b5b inset;
   -moz-text-fill-color: white;
+}
+p {
+  color: #fafafa;
+  margin-top: 38%;
+}
+/*Abrir overlay de Login*/
+
+.open-button-login {
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+  justify-content: center;
+  margin: auto;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/*Overlay de Login*/
+.overlay-login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-content-login {
+  background-color: #121212;
+  border: 2px solid #2c2c2c;
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px #2c2c2c;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+}
+/*Fechar Overlay de Login*/
+.close-overlay-login {
+  display: flex;
+  justify-content: flex-end;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  margin-left: 95%;
+}
+
+.login-form {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Montserrat";
+  margin-bottom: 50px;
+}
+
+p {
+  color: #fafafa;
+  font-family: "Montserrat";
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+/* Formulário de Login */
+.input-login {
+  padding: 10px;
+  border: 2px solid #202020;
+  border-radius: 7px;
+  outline: none;
+  font-size: 15px;
+  background-color: #1e1e1e;
+  height: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.input-senha {
+  padding: 10px;
+  border: 2px solid #202020;
+  border-radius: 7px;
+  outline: none;
+  font-size: 15px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  height: 20px;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* Linha do Formulário de Login */
+.form-row-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row-senha {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-ext-login {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.link-ext-login a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-ext-login a:hover {
+  color: #b3b3b3;
+}
+/* Botao Enviar Login */
+.form-button-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-login {
+  justify-content: center;
+  background: #ffffff;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10%;
+  height: 50px;
+  width: 50%;
+  font-family: "Montserrat";
+}
+
+.button-login:hover {
+  background-color: #a5a5a5;
+  color: #000000;
+}
+/* Mostrar e esconder senha Login */
+.toggle-senha-login {
+  display: flex;
+  right: 20px;
+  margin-left: 10%;
+  cursor: pointer;
+  position: absolute;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 7px;
+  outline: none;
+  height: 24px;
+}
+
+.forget-link a {
+  text-decoration: none;
+  color: #fafafa;
+  font-family: "Montserrat";
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forget-link a:hover {
+  color: #b3b3b3;
+}
+/* Banner de Boas Vindas */
+.welcome-banner {
+  background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #121212 100%);
+  width: 1100px;
+  height: 350px;
+  margin: auto;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Montserrat";
+  gap: 10px;
+}
+
+.content-left {
+  max-width: 50%;
+}
+
+.content-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.content-left p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.img-container {
+  width: 450px;
+  display: flex;
+  height: 350px;
+  justify-content: flex-end;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  user-select: none;
+}
+/* Seção de Jogos */
+.game-container {
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.game1,
+.game2,
+.game3,
+.game4,
+.game5,
+.game6 {
+  height: 130px;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 130px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.game1:hover,
+.game1:focus,
+.game2:hover,
+.game2:focus,
+.game3:hover,
+.game3:focus,
+.game4:hover,
+.game4:focus,
+.game5:hover,
+.game5:focus,
+.game6:hover,
+.game6:focus {
+  /* Seu estilo aqui */
+  transform: scale(1.6);
+  outline: none;
+  color: white;
+}
+
+.game-button {
+  border: none;
+  border: none;
+  background: none;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  user-select: none;
+}
+
+.game-img {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  user-select: none;
 }

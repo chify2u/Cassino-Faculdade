@@ -8,10 +8,10 @@ body {
   background-attachment: fixed;
   overflow: auto;
 }
-
+/* Navbar */
 .navbar {
   width: 100%;
-  padding: 20px 20px;
+  padding: 15px 20px;
   background: linear-gradient(180deg, #000000 0%, #141414 50%, #1a1a1a 100%);
   display: flex;
   justify-content: flex-end;
@@ -28,7 +28,7 @@ body {
   display: flex;
   gap: 20px;
 }
-
+/* Botões de Login e Cadastro */
 .login {
   height: 30px;
   background: #ffffff;
@@ -49,6 +49,7 @@ body {
   border-radius: 5px;
   justify-content: center;
 }
+/* Abrir Cadastro */
 .open-button-cadastro {
   background: none;
   border: none;
@@ -63,21 +64,19 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-
-/* Tela sobreposta (overlay) */
+/*Overlay de Cadastro*/
 .overlay {
-  position: fixed; /* fica preso na tela toda */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* fundo escuro */
-  display: none; /* escondido por padrão */
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
-/* Caixa que aparece no centro */
 .overlay-content {
   background-color: #121212;
   border: 2px solid #2c2c2c;
@@ -89,7 +88,7 @@ body {
   position: absolute;
   height: 82%;
 }
-
+/*Fechar Overlay de Cadastro*/
 .close-overlay-cadastro {
   display: flex;
   justify-content: flex-end;
@@ -118,6 +117,7 @@ body {
   font-family: "Montserrat";
   margin-bottom: 50px;
 }
+/* Texto de Cadastro */
 label {
   font-size: 14px;
   color: #b3b3b3;
@@ -133,7 +133,8 @@ label {
 
 .p-cadastro {
   color: #fafafa;
-  margin-top: 38%;
+  margin-top: 10px;
+  margin: auto;
 }
 
 .form-wrapper {
@@ -141,12 +142,12 @@ label {
   flex-direction: column;
   gap: 20px;
 }
-
+/* Linha do Formulário */
 .form-row {
   display: flex;
   flex-direction: column;
 }
-
+/* Formulário de Cadastro */
 .input-cadastro {
   padding: 10px;
   border: 2px solid #202020;
@@ -180,7 +181,7 @@ input[type="password"]:focus {
 .link-ext a:hover {
   color: #b3b3b3;
 }
-
+/* Mostrar e esconder senha */
 .toggle-senha {
   display: flex;
   right: 20px;
@@ -198,6 +199,7 @@ input[type="password"]:focus {
   display: flex;
   justify-content: center;
 }
+/* Botão de Enviar Cadastro */
 .submit-cadastro {
   justify-content: center;
   background: #ffffff;
@@ -231,6 +233,8 @@ p {
   color: #fafafa;
   margin-top: 38%;
 }
+/*Abrir overlay de Login*/
+
 .open-button-login {
   background-color: #ffffff;
   border: none;
@@ -245,20 +249,19 @@ p {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-/* Tela sobreposta (overlay) */
+/*Overlay de Login*/
 .overlay-login {
-  position: fixed; /* fica preso na tela toda */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* fundo escuro */
-  display: none; /* escondido por padrão */
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
-/* Caixa que aparece no centro */
 .overlay-content-login {
   background-color: #121212;
   border: 2px solid #2c2c2c;
@@ -269,7 +272,7 @@ p {
   max-width: 400px;
   position: absolute;
 }
-
+/*Fechar Overlay de Login*/
 .close-overlay-login {
   display: flex;
   justify-content: flex-end;
@@ -299,8 +302,8 @@ p {
   font-size: 14px;
   margin-top: 15px;
 }
-
-.input-login {
+/* Formulário de Login */
+.input-user {
   padding: 10px;
   border: 2px solid #202020;
   border-radius: 7px;
@@ -312,6 +315,7 @@ p {
   margin-top: 10px;
   color: #ffffff;
 }
+
 .input-senha {
   padding: 10px;
   border: 2px solid #202020;
@@ -328,7 +332,7 @@ p {
   flex-direction: column;
   gap: 20px;
 }
-
+/* Linha do Formulário de Login */
 .form-row-login {
   display: flex;
   flex-direction: column;
@@ -353,12 +357,13 @@ p {
 .link-ext-login a:hover {
   color: #b3b3b3;
 }
-
+/* Botao Enviar Login */
 .form-button-login {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .button-login {
   justify-content: center;
   background: #ffffff;
@@ -379,7 +384,7 @@ p {
   background-color: #a5a5a5;
   color: #000000;
 }
-
+/* Mostrar e esconder senha Login */
 .toggle-senha-login {
   display: flex;
   right: 20px;
@@ -406,7 +411,7 @@ p {
 .forget-link a:hover {
   color: #b3b3b3;
 }
-
+/* Banner de Boas Vindas */
 .welcome-banner {
   background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #121212 100%);
   width: 1100px;
@@ -432,11 +437,13 @@ p {
 .content-left h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  padding-left: 20px;
 }
 
 .content-left p {
   font-size: 1.1rem;
   margin-bottom: 20px;
+  padding-left: 20px;
 }
 
 .img-container {
@@ -452,6 +459,7 @@ p {
   border-radius: 8px;
   user-select: none;
 }
+/* Seção de Jogos */
 .game-container {
   display: flex;
   gap: 70px;

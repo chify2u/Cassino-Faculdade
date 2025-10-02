@@ -16,23 +16,23 @@
 
         <!-- Login -->
         <div class="login">
-          <button class="open-button-login" onclick="abrirOverlay()">Login</button>
+          <button class="open-button-login" onclick="abrirOverlaylogin()">Login</button>
         </div>
       
 <div class="overlay-login" id="overlay-login">
       <div class="overlay-content-login">
-        <button class="close-overlay-login" onclick="fecharOverlay()"><img class='fechar-login' src="/includes/fechar.png" alt="" srcset=""></button>
+        <button class="close-overlay-login" onclick="fecharOverlaylogin()"><img class='fechar-login' src="/includes/fechar.png" alt="" srcset=""></button>
           <div class="quadrado"></div>
-    <form id="" method="POST" action="#" class="login-box">
+    <form class="form-login" id="login-form">
       <div class="login-form">
         <h1>Faça login na conta</h1>
       </div>
       <div class="form-row-login">
-        <input class="input-login"
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
+        <input class="input-user"
+          type="text"
+          id="login-user"
+          name="email/cpf"
+          placeholder="Email ou CPF"
           required
         />
 
@@ -55,7 +55,7 @@
       </div>
       <br />
       <div class="form-button-login">
-        <button class="button-login" type="submit">Comece Já</button>
+        <button class="button-login" onclick="login(event)">Comece Já</button>
       </div>
 
       <div class="link-ext-login">
@@ -74,7 +74,7 @@
 <!-- Cadastro -->
 
         <div class="cadastro">
-          <button class="open-button-cadastro" onclick="openOverlay()">Cadastre-se</button>
+          <button class="open-button-cadastro" onclick="openOverlay()">Registrar</button>
         </div>
       </div>
 <div class="quadrado"></div>
@@ -82,14 +82,14 @@
       <div class="overlay-content">
 
         <button class="close-overlay-cadastro" onclick="closeOverlay()"><img class='fechar-login' src="/includes/fechar.png" alt="" srcset=""></button>
-    <form id="cadastroForm1" method="POST" action="#" class="cadastro-form">
+    <form class="form-cadastro" id="cadastro-form">
       <div class="cadastro-text">
         <h1>Cadastre</h1>
       </div>
       <div class="form-row">
         <input class="input-cadastro"
           type="email"
-          id="email"
+          id="cadastro-email"
           name="email"
           placeholder="Email"
           required
@@ -99,7 +99,7 @@
       <div class="form-row">
         <input class="input-cadastro"
           type="text"
-          id="cpf"
+          id="cadastro-cpf"
           name="cpf"
           placeholder="CPF"
           maxlength="14"
@@ -110,7 +110,7 @@
       <div class="form-row">
         <input class="input-cadastro"
           type="password"
-          id="password"
+          id="cadastro-password"
           name="password"
           placeholder="Senha"
           required
@@ -140,7 +140,7 @@
           <input type="checkbox" id="termos" required /> Aceito os termos de uso
         </label>
       <div class="form-button-cadastro">
-        <button class="submit-cadastro" type="submit">Comece Já</button>
+        <button onclick="registrar()" class="submit-cadastro" >Comece Já</button>
       </div>
       <div class="link-ext">
         <p class="p-cadastro">Já tem uma conta? <a href="/login">Faça login</a></p>

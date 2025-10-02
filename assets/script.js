@@ -13,7 +13,7 @@ window.onload = function () {
     }
   });
   // Toggle senha Cadastro e Confirmacão de senhas
-  const senha = document.getElementById("password");
+  const senha = document.getElementById("cadastro-password");
   const toggle = document.getElementById("toggle_Senha");
 
   toggle.addEventListener("click", () => {
@@ -40,7 +40,7 @@ window.onload = function () {
   });
 
   // CPF
-  const cpfInput = document.getElementById("cpf");
+  const cpfInput = document.getElementById("cadastro-cpf");
   const cpfError = document.getElementById("cpf-error");
 
   cpfInput.addEventListener("input", () => {
@@ -54,25 +54,6 @@ window.onload = function () {
 
     cpfInput.value = value;
   });
-
-  function validarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, "");
-    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // sequências iguais inválidas
-
-    let soma = 0;
-    for (let i = 0; i < 9; i++) soma += parseInt(cpf[i]) * (10 - i);
-    let resto = (soma * 10) % 11;
-    if (resto === 10) resto = 0;
-    if (resto !== parseInt(cpf[9])) return false;
-
-    soma = 0;
-    for (let i = 0; i < 10; i++) soma += parseInt(cpf[i]) * (11 - i);
-    resto = (soma * 10) % 11;
-    if (resto === 10) resto = 0;
-    if (resto !== parseInt(cpf[10])) return false;
-
-    return true;
-  }
 
   cpfInput.addEventListener("blur", () => {
     if (!validarCPF(cpfInput.value)) {
@@ -106,10 +87,44 @@ function openOverlay() {
 function closeOverlay() {
   document.getElementById("overlay").style.display = "none";
 }
-function abrirOverlay() {
+function abrirOverlaylogin() {
   document.getElementById("overlay-login").style.display = "flex";
 }
 
-function fecharOverlay() {
+function fecharOverlaylogin() {
   document.getElementById("overlay-login").style.display = "none";
+}
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+function registrar() {
+  const email = document.getElementById("cadastro-email").value;
+  const cpf = document.getElementById("cadastro-cpf").value;
+  const password = document.getElementById("cadastro-password").value;
+
+  if (email && cpf && password) {
+    users.push({ email, cpf, password });
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Cadastro realizado com sucesso!");
+    abrirOverlaylogin();
+  } else {
+    alert("Por favor, preencha todos os campos.");
+  }
+}
+
+function login(event) {
+  if (event) event.preventDefault();
+  const usert = document.getElementById("login-user").value;
+  const password = document.getElementById("password-login").value;
+
+  const user = users.find(
+    (u) => (u.email === usert || u.cpf === usert) && u.password === password
+  );
+
+  if (user !== null && user !== undefined) {
+    alert("Login realizado com sucesso!");
+    window.location.href = "./pages/home.html";
+  } else {
+    alert("Usuário ou senha incorretos.");
+  }
 }
