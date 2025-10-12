@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/assets/perfil.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="menu">
+        <button onclick="menu.hidden ^= 1" class="perfil-btn">
+          <img src="/includes/perfil_logo.png" alt="Perfil" />
+        </button>
+        <ul id="menu" class="menu-list" hidden>
+          <li class="list"><a href="/pages/perfil.html">Perfil</a></li>
+          <li class="list"><a href="#">Depósito</a></li>
+          <li class="list"><a href="/pages/perfil.html">Perfil</a></li>
+          <li class="list"><a href="#">Depósito</a></li>
+          <li class="list"><a href="#">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-sidebar">
+      <div class="sidebar">
+        <ul>
+          <li onclick="showSection('informacoes')">Informações</li>
+          <li onclick="showSection('endereco')">Endereço</li>
+          <li onclick="showSection('seguranca')">Segurança</li>
+          <li onclick="showSection('historico')">Historico</li>
+          <li onclick="showSection('suporte')">Suporte</li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="main-content">
+          <div class="secoes">
+            <div id="informacoes" class="section active">
+              <h2>Informações Principais</h2>
+              <p>Saldo disponível: R$1.935,00</p>
+            </div>
+
+            <div id="endereco" class="section">
+              <h2>Endereço</h2>
+              <p>Você não possui novas contratações.</p>
+            </div>
+
+            <div id="seguranca" class="section">
+              <h2>Segurança</h2>
+              <p>Lista de clientes cadastrados.</p>
+              </div>
+
+            <div id="historico" class="section">
+              <h2>Historico</h2>
+              <p>Lista de clientes cadastrados.</p>
+              </div>
+
+            <div id="suporte" class="section">
+              <h2>Suporte</h2>
+              <p>Lista de clientes cadastrados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showSection(id) {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => section.classList.remove("active"));
+
+        document.getElementById(id).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
