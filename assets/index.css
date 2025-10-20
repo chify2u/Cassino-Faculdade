@@ -8,15 +8,18 @@ body {
   background-attachment: fixed;
   overflow: auto;
 }
-/* Navbar */
 .navbar {
   width: 100%;
-  padding: 15px 20px;
-  background: linear-gradient(180deg, #000000 0%, #141414 50%, #1a1a1a 100%);
+  padding: 10px 20px;
+  background-color: #121212; /* Preto escuro */
   display: flex;
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .conteudo {
