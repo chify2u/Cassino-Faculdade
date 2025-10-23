@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
+/* ======== BASE ======== */
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, #2e2e2e 0%, #1a1a1a 50%, #000000 100%);
+  background-image: url(/includes/background.png);
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -14,6 +15,7 @@ a {
   text-decoration: none;
 }
 
+/* ======== NAVBAR ======== */
 .navbar {
   width: 100%;
   padding: 5px 10px;
@@ -33,24 +35,27 @@ a {
   background: none;
   cursor: pointer;
   padding: 0;
-  margin-right: 50px;
+  margin-left: -100%;
 }
+
 .perfil-btn img {
   height: 40px;
   border-radius: 50%;
   margin-top: 1px;
+  margin-left: -100%;
 }
+
 .menu {
   position: relative;
   display: inline-block;
 }
+
 .menu-list {
   position: absolute;
-  top: 100%;
-  left: 20%;
-  transform: translateX(-50%);
+  top: 95%;
+  right: 10%;
   border: 1px solid #ccc;
-  background: rgb(0, 0, 0);
+  background: white;
   list-style: none;
   padding: 0;
   margin: 5px 0 0 0;
@@ -58,19 +63,24 @@ a {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
+
 .list {
   padding: 10px;
-  border-bottom: 1px solid #cc0e0e;
+  color: black;
+  border-bottom: 1px solid #eee;
   text-align: center;
   cursor: pointer;
-  display: flex;
 }
+
 .list:last-child {
-  border-bottom: 10px;
+  border-bottom: none;
 }
+
 .list:hover {
   background: #f2f2f2;
 }
+
+/* ======== LAYOUT ======== */
 .container-sidebar {
   display: flex;
   min-height: calc(100vh - 60px);
@@ -132,10 +142,22 @@ a {
   display: block;
 }
 
-h2 {
-  font-weight: 700;
+/* ======== TEXTOS ======== */
+
+h2,
+h3 {
   color: #fff;
-  margin-bottom: 15px;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+h6 {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 10 px;
 }
 
 p {
@@ -143,7 +165,14 @@ p {
   font-size: 16px;
   line-height: 1.5;
 }
+.text_info {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 20px;
+  gap: 10px;
+}
 
+/* ======== FORMULÁRIOS ======== */
 .form-group {
   margin-bottom: 20px;
   display: flex;
@@ -197,6 +226,7 @@ select {
   outline: none;
   font-size: 14px;
   background-color: #2e2e2e;
+  resize: none;
 }
 
 input[type="text"]:focus,
@@ -217,7 +247,7 @@ select:focus {
 
 input[type="submit"],
 button {
-  background: linear-gradient(90deg, #252525, #272727);
+  background: linear-gradient(90deg, #e60000, #a00000);
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -228,28 +258,118 @@ button {
 }
 
 input[type="submit"]:hover {
-  background-color: #ffd700;
-  color: #004e2c;
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff0000, #cc0000);
 }
 
 #desc {
   height: 100px;
 }
 
+/* ======== ALTERAR SENHA ======== */
+#alterar-senha form {
+  background: none;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+#alterar-senha input[type="password"] {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background-color: #2e2e2e;
+  color: #fff;
+  font-size: 14px;
+}
+
+#alterar-senha input[type="password"]:focus {
+  border-color: #e60000;
+  box-shadow: 0 0 6px #e60000;
+}
+
+#alterar-senha button {
+  background: linear-gradient(90deg, #e60000, #a00000);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+#alterar-senha button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff0000, #cc0000);
+}
+
+/* ======== TABELA HISTÓRICO ======== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 12px 8px;
+}
+
+th {
+  background: #111111;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+tr:nth-child(even) {
+  background: #3b3b3b;
+}
+
+tr:nth-child(odd) {
+  background: #2b2b2b;
+}
+
+tr:hover {
+  background: #1d1d1d;
+  transition: 0.2s;
+}
+
+.vitoria {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.derrota {
+  color: #e53935;
+  font-weight: bold;
+}
+
+.empate {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+/* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
   .container-sidebar {
     flex-direction: column;
   }
+
   .sidebar {
     width: 100%;
     display: flex;
     overflow-x: auto;
     padding: 10px 0;
   }
+
   .sidebar ul {
     display: flex;
     width: 100%;
   }
+
   .sidebar ul li {
     flex: 1;
     text-align: center;
@@ -257,12 +377,43 @@ input[type="submit"]:hover {
     border-bottom: 2px solid transparent;
     padding: 10px 15px;
   }
+
   .sidebar ul li:hover,
   .sidebar ul li.active {
     border-bottom: 2px solid #e60000;
     border-left: none;
   }
+
   .container {
     padding: 20px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  td {
+    padding: 10px;
+    text-align: right;
+    position: relative;
+    border-bottom: 1px solid #222845;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    color: #aaa;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 }

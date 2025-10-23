@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div class="navbar">
       <div class="menu">
@@ -17,21 +18,20 @@
           <img src="/includes/perfil_logo.png" alt="Perfil" />
         </button>
         <ul id="menu" class="menu-list" hidden>
-          <li class="list"><a href="/pages/perfil.html">Perfil</a></li>
+          <li class="list"><a href="/pages/home.html">Inicio</a></li>
           <li class="list"><a href="#">Depósito</a></li>
-          <li class="list"><a href="/pages/perfil.html">Perfil</a></li>
-          <li class="list"><a href="#">Depósito</a></li>
+          <li class="list"><a href="#">Saque</a></li>
           <li class="list"><a href="#">Sair</a></li>
         </ul>
       </div>
     </div>
+
     <div class="container-sidebar">
       <div class="sidebar">
         <ul>
           <li onclick="showSection('informacoes')">Informações</li>
-          <li onclick="showSection('endereco')">Endereço</li>
-          <li onclick="showSection('seguranca')">Segurança</li>
-          <li onclick="showSection('historico')">Historico</li>
+          <li onclick="showSection('alterar-senha')">Segurança</li>
+          <li onclick="showSection('historico')">Histórico</li>
           <li onclick="showSection('suporte')">Suporte</li>
         </ul>
       </div>
@@ -39,83 +39,184 @@
       <div class="container">
         <div class="main-content">
           <div class="secoes">
+
+            <!-- INFORMAÇÕES -->
             <div id="informacoes" class="section active">
-          <h2>Informações</h2><br><br>  
-              <div class="form-group">
+              <h3>Informações do Perfil</h3>
+                            <div class="card_photo" style="display: flex; align-items: center; gap: 20px;">
+  <img
+    src="https://bootdey.com/img/Content/avatar/avatar1.png"
+    alt="Avatar"
+    class="profile_photo"
+    style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"
+  />
+  <div class="text_info">
+    <h6>Upload nova foto de perfil <br> Formatos permitidos: JPG, GIF ou PNG. Máx: 800KB</h6>
+    
+    <input type="file" class="new-photo" accept="image/png, image/jpeg, image/gif" />
+  </div>
+</div>
+                <br />
+                <div class="form-group">
                   <label class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" value="">
-                                </div>
-                                <br>
-            <div class="form-group">
-                                    <label class="form-label">Data de Nascimento</label>
-                                    <input type="text" class="form-control" value="">
-                                </div>
-                                <br>
-                                 <div class="form-group">
-                                    <label class="form-label">Usuario</label>
-                                    <input type="text" class="form-control mb-1" value="">
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" value="">
-                              
-                                </div>
-                              
-                            </div>
-                     
-            </div>
-
-            <div id="endereco" class="section">
-              <h2>Endereço</h2>
-              <p>   .</p>
-            </div>
-
-            <div id="seguranca" class="section">
-              <h2>Segurança</h2>
-              <p></p>
+                  <input type="text" class="form-control" value="" />
+                </div>
+                <br />
+                <div class="form-group">
+                  <label class="form-label">Data de Nascimento</label>
+                  <input type="text" class="form-control" value="" />
+                </div>
+                <br />
+                <div class="form-group">
+                  <label class="form-label">Usuário</label>
+                  <input type="text" class="form-control mb-1" value="" />
+                </div>
+                <br />
+                <div class="form-group">
+                  <label class="form-label">E-mail</label>
+                  <input type="text" class="form-control mb-1" value="" />
+                </div>
               </div>
+            </div>
 
+            <!-- ALTERAR SENHA -->
+            <div id="alterar-senha" class="section">
+              <h2>Alterar Senha</h2>
+              <br />
+              <form id="form-senha">
+                <div class="form-group">
+                  <p>
+                    Por segurança, insira sua senha atual e escolha uma nova
+                    senha.
+                  </p>
+
+                  <label for="senha-atual" class="form-label"
+                    >Senha Atual</label
+                  >
+                  <input
+                    type="password"
+                    id="senha-atual"
+                    name="senha-atual"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="nova-senha" class="form-label">Nova Senha</label>
+                  <input
+                    type="password"
+                    id="nova-senha"
+                    name="nova-senha"
+                    required
+                    minlength="6"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmar-senha" class="form-label"
+                    >Confirmar Nova Senha</label
+                  >
+                  <input
+                    type="password"
+                    id="confirmar-senha"
+                    name="confirmar-senha"
+                    required
+                  />
+                </div>
+
+                <div class="form-button">
+                  <button type="submit">Salvar Alterações</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- HISTÓRICO -->
             <div id="historico" class="section">
-              <h2>Historico</h2>
-              <p></p>
-              </div>
+              <div class="container">
+                <h2>Seu Histórico</h2>
+                <br>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Data</th>
+                      <th>Jogo</th>
+                      <th>Valor Apostado</th>
+                      <th>Resultado</th>
+                      <th>Ganho</th>
+                      <th>Saldo Final</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Data">23/10/2025 18:42</td>
+                      <td data-label="Jogo">Roleta</td>
+                      <td data-label="Valor Apostado">R$ 50,00</td>
+                      <td data-label="Resultado" class="vitoria">Vitória</td>
+                      <td data-label="Ganho">R$ 100,00</td>
+                      <td data-label="Saldo Final">R$ 350,00</td>
+                    </tr>
 
+                    <tr>
+                      <td data-label="Data">23/10/2025 17:15</td>
+                      <td data-label="Jogo">Blackjack</td>
+                      <td data-label="Valor Apostado">R$ 30,00</td>
+                      <td data-label="Resultado" class="derrota">Derrota</td>
+                      <td data-label="Ganho">R$ 0,00</td>
+                      <td data-label="Saldo Final">R$ 250,00</td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Data">22/10/2025 21:30</td>
+                      <td data-label="Jogo">Caça-Níquel</td>
+                      <td data-label="Valor Apostado">R$ 10,00</td>
+                      <td data-label="Resultado" class="empate">Empate</td>
+                      <td data-label="Ganho">R$ 10,00</td>
+                      <td data-label="Saldo Final">R$ 280,00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- SUPORTE -->
             <div id="suporte" class="section">
-              <h2>Formulario de Suporte</h2>
-              <br>
-              <div class="form-wrapper">  
-        <section class="form-items">
-          
-          <div class="form-row">
-            <label class="form-label" for="email">Email:</label>
-            <input type="email" id="email" name="email"  required />
-          </div><br>
-          <div class="form-row">
-            <label class="form-label" for="assunto">Assunto:</label>
-            <input type="text" id="assunto" name="assunto"  required><br>
-          </div><br>
-          <div class="form-row">
-            <label class="form-label" for="descricao">Descrição:</label>
-            <textarea type="text" id="desc" name="descricao" required> </textarea><br>
-          </div>
-          
-      <div class="form-button">
-        <button type="submit">Enviar</button>
-      </div>
+              <h2>Formulário de Suporte</h2>
+              <br />
+              <div class="form-wrapper">
+                <section class="form-items">
+                  <div class="form-row">
+                    <label class="form-label" for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <br />
+                  <div class="form-row">
+                    <label class="form-label" for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="assunto" required />
+                    <br />
+                  </div>
+                  <br />
+                  <div class="form-row">
+                    <label class="form-label" for="descricao">Descrição:</label>
+                    <textarea
+                      type="text"
+                      id="desc"
+                      name="descricao"
+                      required
+                    ></textarea>
+                    <br />
+                  </div>
+
+                  <div class="form-button">
+                    <button type="submit">Enviar</button>
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script>
-      function showSection(id) {
-        const sections = document.querySelectorAll(".section");
-        sections.forEach((section) => section.classList.remove("active"));
-
-        document.getElementById(id).classList.add("active");
-      }
-    </script>
+    <script src="/assets/script.js"></script>
   </body>
 </html>
