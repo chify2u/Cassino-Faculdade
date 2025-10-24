@@ -12,195 +12,307 @@
   </head>
   <body>
     <div class="navbar">
-      <div class="container">
-
-        <!-- Login -->
-        <div class="login">
-          <button class="open-button-login" onclick="abrirOverlaylogin()">Login</button>
-        </div>
-      
-<div class="overlay-login" id="overlay-login">
-      <div class="overlay-content-login">
-        <button class="close-overlay-login" onclick="fecharOverlaylogin()"><img class='fechar-login' src="/includes/fechar.png" style="width: 30px; height: 30px;" alt="" srcset=""></button>
-          <div class="quadrado"></div>
-    <form class="form-login" id="login-form">
-      <div class="login-form">
-        <h1>Faça login na conta</h1>
+      <h2>CassinoOnline</h2>
+      <div class="menu">
+        <a href="#jogos">Jogos</a>
+        <a href="#promocoes">Promoções</a>
+        <a href="#faq">FAQ</a>
       </div>
-      <div class="form-row-login">
-        <input class="input-user"
-          type="text"
-          id="login-user"
-          name="email/cpf"
-          placeholder="Email ou CPF"
-          required
-        />
+      <div class="auth-buttons">
+        <button class="open-button-login" onclick="abrirOverlaylogin()">
+          Login
+        </button>
+        <button class="open-button-cadastro" onclick="openOverlay()">
+          Registrar
+        </button>
+      </div>
+    </div>
 
-        <div class="form-row-senha">
-          <input class="input-senha"
-            type="password"
-            id="password-login"
-            name="password"
-            placeholder="Senha"
-            required
+    <div class="overlay-login" id="overlay-login">
+      <div class="overlay-content-login">
+        <button class="close-overlay-login" onclick="fecharOverlaylogin()">
+          <img
+            class="fechar-login"
+            src="/includes/fechar.png"
+            style="width: 30px; height: 30px"
+            alt=""
           />
-          <div class="toggle-senha-login">
-            <img
-              src="/includes/olho_aberto.png"
-              id="toggleSenha"
-              alt="Mostrar senha"
+        </button>
+        <div class="quadrado"></div>
+        <form class="form-login" id="login-form">
+          <div class="login-form">
+            <h1>Faça login na conta</h1>
+          </div>
+          <div class="form-row-login">
+            <input
+              class="input-user"
+              type="text"
+              id="login-user"
+              name="email/cpf"
+              placeholder="Email ou CPF"
+              required
+            />
+            <div class="form-row-senha">
+              <input
+                class="input-senha"
+                type="password"
+                id="password-login"
+                name="password"
+                placeholder="Senha"
+                required
+              />
+              <div class="toggle-senha-login">
+                <img
+                  src="/includes/olho_aberto.png"
+                  id="toggleSenha"
+                  alt="Mostrar senha"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-button-login">
+            <button class="button-login">Comece Já</button>
+          </div>
+          <div class="link-ext-login">
+            <p class="p-login">
+              Não tem uma conta ainda?
+              <a href="/pages/cadastro.html">Crie uma Agora!</a>
+            </p>
+          </div>
+          <div class="forget-link">
+            <a href="/esqueceuSenha">Esqueceu a Senha?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="overlay-content">
+        <button class="close-overlay-cadastro" onclick="closeOverlay()">
+          <img
+            class="fechar-cadastro"
+            src="/includes/fechar.png"
+            style="width: 30px; height: 30px"
+            alt=""
+          />
+        </button>
+        <form class="form-cadastro" id="cadastro-form">
+          <div class="cadastro-text">
+            <h1>Cadastre</h1>
+          </div>
+          <div class="form-row">
+            <input
+              class="input-cadastro"
+              type="email"
+              id="cadastro-email"
+              name="email"
+              placeholder="Email"
+              required
             />
           </div>
+          <div class="form-row">
+            <input
+              class="input-cadastro"
+              type="text"
+              id="cadastro-cpf"
+              name="cpf"
+              placeholder="CPF"
+              maxlength="11"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <input
+              class="input-cadastro"
+              type="password"
+              id="cadastro-password"
+              name="password"
+              placeholder="Senha"
+              required
+            />
+            <div class="toggle-senha">
+              <img
+                src="/includes/olho_aberto.png"
+                id="toggle_Senha"
+                alt="Mostrar senha"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <input
+              class="input-cadastro"
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="Confirmar Senha"
+              required
+            />
+            <div class="toggle-senha">
+              <img
+                src="/includes/olho_aberto.png"
+                id="toggle-confirm"
+                alt="Mostrar senha"
+              />
+            </div>
+          </div>
+          <div id="barra-senha"></div>
+          <label>
+            <input type="checkbox" id="termos" required /> Aceito os termos de
+            uso
+          </label>
+          <div class="form-button-cadastro">
+            <button class="submit-cadastro">Comece Já</button>
+          </div>
+          <div class="link-ext">
+            <p class="p-cadastro">
+              Já tem uma conta? <a href="/login">Faça login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br /><br />
+    <div class="welcome-banner">
+      <div class="content-left">
+        <h1>Bem-vindo ao nosso cassino</h1>
+        <p>Jogue e ganhe grandes prêmios!</p>
+        <button class="cta-button" onclick="openOverlay()">Comece Agora</button>
+      </div>
+      <div class="img-container">
+        <img class="banner-img" src="/includes/card_img.png" alt="" />
+      </div>
+    </div>
+
+    <section class="promocoes" id="promocoes">
+      <h2>Promoções Atuais</h2>
+      <div class="promo-cards">
+        <div class="promo-card">
+          <h3>Bônus de Boas-Vindas</h3>
+          <p>Receba 100% de bônus no seu primeiro depósito!</p>
+        </div>
+        <div class="promo-card">
+          <h3>Rodadas Grátis</h3>
+          <p>Ganhe até 50 rodadas grátis em jogos selecionados!</p>
+        </div>
+        <div class="promo-card">
+          <h3>Sorte Club</h3>
+          <p>
+            Sistema de missões e uma loja para trocar pontos por giros extras ou
+            prêmios.
+          </p>
         </div>
       </div>
-      <br />
-      <div class="form-button-login">
-        <button class="button-login" >Comece Já</button>
-      </div>
+    </section>
 
-      <div class="link-ext-login">
-        <p class="p-login">
-          Não tem uma conta ainda?
-          <a href="/pages/cadastro.html">Crie uma Agora!</a>
+    <section class="jogos" id="jogos">
+      <h2>Nossos Jogos</h2>
+      <div class="game-container">
+        <div class="game-card">
+          <button
+            class="game-button"
+            onclick="window.location.href='cadastro.html'"
+          >
+            <img
+              class="game-img"
+              src="/includes/blackjack.jpg"
+              width="130px"
+              height="130px"
+            />
+          </button>
+        </div>
+        <div class="game-card">
+          <button
+            class="game-button"
+            onclick="window.location.href='cadastro.html'"
+          >
+            <img
+              class="game-img"
+              src="/includes/blackjack.jpg"
+              width="130px"
+              height="130px"
+            />
+          </button>
+        </div>
+        <div class="game-card">
+          <button
+            class="game-button"
+            onclick="window.location.href='cadastro.html'"
+          >
+            <img
+              class="game-img"
+              src="/includes/blackjack.jpg"
+              width="130px"
+              height="130px"
+            />
+          </button>
+        </div>
+        <div class="game-card">
+          <button
+            class="game-button"
+            onclick="window.location.href='cadastro.html'"
+          >
+            <img
+              class="game-img"
+              src="/includes/blackjack.jpg"
+              width="130px"
+              height="130px"
+            />
+          </button>
+        </div>
+        <div class="game-card">
+          <button
+            class="game-button"
+            onclick="window.location.href='cadastro.html'"
+          >
+            <img
+              class="game-img"
+              src="/includes/blackjack.jpg"
+              width="130px"
+              height="130px"
+            />
+          </button>
+        </div>
+        <div class="game-card">
+          <button
+            class="game-button"
+            onclick="window.location.href='cadastro.html'"
+          >
+            <img
+              class="game-img"
+              src="/includes/blackjack.jpg"
+              width="130px"
+              height="130px"
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-item">
+        <h3>Como faço para me cadastrar?</h3>
+        <p>
+          Basta clicar em “Registrar”, preencher seus dados e começar a jogar!
         </p>
       </div>
-      <div class="forget-link">
-        <a href="/esqueceuSenha">Esqueceu a Senha?</a>
+      <div class="faq-item">
+        <h3>É seguro jogar?</h3>
+        <p>
+          Sim, usamos criptografia de ponta e cumprimos todas as normas legais.
+        </p>
       </div>
-    </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 CassinoOnline. Todos os direitos reservados.</p>
+      <div>
+        <a href="#">Política de Privacidade</a> |
+        <a href="#">Termos de Uso</a> |
+        <a href="#">Contato</a>
       </div>
-    </div>
+    </footer>
 
-<!-- Cadastro -->
-
-        <div class="cadastro">
-          <button class="open-button-cadastro" onclick="openOverlay()">Registrar</button>
-        </div>
-      </div>
-<div class="quadrado"></div>
-<div class="overlay" id="overlay">
-      <div class="overlay-content">
-
-        <button class="close-overlay-cadastro" onclick="closeOverlay()"><img class='fechar-cadastro' src="/includes/fechar.png" style="width: 30px; height: 30px;" alt="" srcset=""></button>
-    <form class="form-cadastro" id="cadastro-form">
-      <div class="cadastro-text">
-        <h1>Cadastre</h1>
-      </div>
-      <div class="form-row">
-        <input class="input-cadastro"
-          type="email"
-          id="cadastro-email"
-          name="email"
-          placeholder="Email"
-          required
-        />
-      </div>
-      <br />
-      <div class="form-row">
-        <input class="input-cadastro"
-          type="text"
-          id="cadastro-cpf"
-          name="cpf"
-          placeholder="CPF"
-          maxlength="11"
-          required
-        />
-      </div>
-      <br>
-      <div class="form-row">
-        <input class="input-cadastro"
-          type="password"
-          id="cadastro-password"
-          name="password"
-          placeholder="Senha"
-      
-          required
-        /> 
-        <div class="toggle-senha">
-          <img src="/includes/olho_aberto.png" id="toggle_Senha" alt="Mostrar senha">
-        </div>
-
-      </div><br>
-
-
-        <div class="form-row">
-          <input class="input-cadastro"
-            type="password"
-            id="confirm-password"
-            name="confirm-password"
-            placeholder="Confirmar Senha"
-            required
-          />
-          <div class="toggle-senha">
-          <img src="/includes/olho_aberto.png" id="toggle-confirm" alt="Mostrar senha">
-</div>
-        <div id="barra-senha"></div>
-      
-      
-  <label>
-          <input type="checkbox" id="termos" required /> Aceito os termos de uso
-        </label>
-      <div class="form-button-cadastro">
-        <button class="submit-cadastro" >Comece Já</button>
-      </div>
-      <div class="link-ext">
-        <p class="p-cadastro">Já tem uma conta? <a href="/login">Faça login</a></p>
-      </div>
-    </form>
-      </div>
-     </div>
-    </div>
-  </div>
-</div>
-<br>
-<br>
-<div class="welcome-banner">
-  <div class="content-left">
-    <h1>Bem-vindo ao nosso cassino</h1>
-    <p>Jogue e ganhe grandes prêmios!</p>
-  </div>
-  <div class="img-container">
-    <img class="banner-img" src="/includes/card_img.png" alt="">
-
-    
-  </div>
-
-</div>
- <div class="game-container">
-
-<div class="game1">
-  <button  class="game-button" onclick="window.location.href='cadastro.html'">
-
-<img class="game-img" src="/includes/blackjack.jpg" width="130px" height="130px">
-   
-  </button>
-</div>
-<div class="game2">
-  <button  class="game-button" onclick="window.location.href='cadastro.html'">
-
-<img class="game-img" src="/includes/blackjack.jpg" width="130px" height="130px">
-   
-  </button>
-  </div>
-  <div class="game3">
-    <button  class="game-button" onclick="window.location.href='cadastro.html'">
-
-<img class="game-img" src="/includes/blackjack.jpg" width="130px" height="130px">
-   
-  </button>
-  </div>
-  <div class="game4">
-    <button  class="game-button" onclick="window.location.href='cadastro.html'">
-
-<img class="game-img" src="/includes/blackjack.jpg" width="130px" height="130px">
-   
-  </button>
-  </div>
-
-
-
-<script src="/assets/script.js"></script>
-
-
+    <script src="/assets/script.js"></script>
   </body>
 </html>
