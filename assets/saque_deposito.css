@@ -113,11 +113,9 @@ a {
   font-weight: 700;
 }
 
-/* ===== CONTEÚDO PRINCIPAL ===== */
 .container {
   flex: 1;
   padding: 30px;
-
   overflow-y: auto;
 }
 
@@ -186,7 +184,6 @@ select:focus {
   background-color: #00b873;
 }
 
-/* ===== TABELA HISTÓRICO ===== */
 .tabela-historico {
   margin-top: 40px;
   background-color: #1f1f1f;
@@ -215,7 +212,6 @@ select:focus {
   background-color: #222;
 }
 
-/* ===== STATUS CORES ===== */
 .status-aprovado {
   color: #00d084;
   font-weight: 500;
@@ -231,7 +227,6 @@ select:focus {
   font-weight: 500;
 }
 
-/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
   .container-sidebar {
     flex-direction: column;

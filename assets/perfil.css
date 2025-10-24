@@ -149,10 +149,11 @@ h3 {
   line-height: 1.2;
   text-transform: uppercase;
 }
+
 h6 {
   color: #bbb;
   font-size: 14px;
-  margin-bottom: 10 px;
+  margin-bottom: 10px;
 }
 
 p {
@@ -160,6 +161,7 @@ p {
   font-size: 16px;
   line-height: 1.5;
 }
+
 .text_info {
   color: #aaa;
   font-size: 14px;
@@ -189,7 +191,7 @@ p {
 form {
   background-color: #2d00f5;
   padding: 20px;
-  width: 15px;
+  width: 100%;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(10, 7, 134, 0.1);
 }
@@ -221,6 +223,7 @@ select {
   font-size: 14px;
   background-color: #2e2e2e;
   resize: none;
+  color: #fff;
 }
 
 input[type="text"]:focus,
@@ -248,10 +251,11 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+button:hover {
   transform: scale(1.05);
   background: linear-gradient(90deg, #ff0000, #cc0000);
 }
@@ -289,12 +293,6 @@ input[type="submit"]:hover {
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: 600;
-  transition: transform 0.2s ease;
-}
-
-#alterar-senha button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #ff0000, #cc0000);
 }
 
 table {
@@ -372,7 +370,6 @@ tr:hover {
   .sidebar ul li:hover,
   .sidebar ul li.active {
     border-bottom: 2px solid #e60000;
-    border-left: none;
   }
 
   .container {
