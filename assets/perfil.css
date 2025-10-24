@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-/* ======== BASE ======== */
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -15,7 +14,6 @@ a {
   text-decoration: none;
 }
 
-/* ======== NAVBAR ======== */
 .navbar {
   width: 100%;
   padding: 5px 10px;
@@ -41,7 +39,7 @@ a {
 .perfil-btn img {
   height: 40px;
   border-radius: 50%;
-  margin-top: 1px;
+  margin-top: 5px;
   margin-left: -100%;
 }
 
@@ -80,7 +78,6 @@ a {
   background: #f2f2f2;
 }
 
-/* ======== LAYOUT ======== */
 .container-sidebar {
   display: flex;
   min-height: calc(100vh - 60px);
@@ -142,8 +139,6 @@ a {
   display: block;
 }
 
-/* ======== TEXTOS ======== */
-
 h2,
 h3 {
   color: #fff;
@@ -172,7 +167,6 @@ p {
   gap: 10px;
 }
 
-/* ======== FORMULÁRIOS ======== */
 .form-group {
   margin-bottom: 20px;
   display: flex;
@@ -266,13 +260,12 @@ input[type="submit"]:hover {
   height: 100px;
 }
 
-/* ======== ALTERAR SENHA ======== */
 #alterar-senha form {
   background: none;
   padding: 30px;
   border-radius: 10px;
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
 }
@@ -304,7 +297,6 @@ input[type="submit"]:hover {
   background: linear-gradient(90deg, #ff0000, #cc0000);
 }
 
-/* ======== TABELA HISTÓRICO ======== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -352,7 +344,6 @@ tr:hover {
   font-weight: bold;
 }
 
-/* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
   .container-sidebar {
     flex-direction: column;

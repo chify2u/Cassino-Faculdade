@@ -16,30 +16,72 @@
         <div class="quadrado">
           <a href="/pages/deposito.html">Depositar</a>
         </div>
-        <div class="saldo">R$0,00</div>
+
+        <div class="saldo" id="unidade">R$<span id="saldo">0,00</span></div>
       </div>
+
       <div class="menu">
         <button onclick="menu.hidden ^= 1" class="perfil-btn">
           <img src="/includes/perfil_logo.png" alt="Perfil" />
         </button>
         <ul id="menu" class="menu-list" hidden>
           <li class="list"><a href="/pages/perfil.html">Perfil</a></li>
-          <li class="list"><a href="#">Depósito</a></li>
-          <li class="list"><a href="/pages/perfil.html">Perfil</a></li>
-          <li class="list"><a href="#">Depósito</a></li>
+          <li class="list"><a href="/pages/deposito.html">Depósito</a></li>
+          <li class="list"><a href="/pages/saque.html">Saque</a></li> 
           <li class="list"><a href="#">Sair</a></li>
         </ul>
       </div>
     </div>
-
+    <br>
+<br>
     <div class="welcome-banner">
-      <div class="content-left">
-        <h1>Bem-vindo ao nosso cassino</h1>
-        <p>Jogue e ganhe grandes prêmios!</p>
-      </div>
-      <div class="img-container">
-        <img class="banner-img" src="/includes/card_img.png" alt="" />
-      </div>
-    </div>
+  <div class="content-left">
+    <h1>Bem-vindo ao nosso cassino</h1>
+    <p>Jogue e ganhe grandes prêmios!</p>
+  </div>
+  <div class="img-container">
+    <img class="banner-img" src="/includes/card_img.png" alt="">
+
+    
+  </div>
+
+</div>
+ <div class="game-container">
+
+<div class="game1">
+  <button  class="game-button" onclick="window.location.href='cadastro.html'">
+
+<img class="game-img" src="/includes/blackjack.jpg" width="130px" height="130px">
+   
+  </button>
+</div>
+<div class="game2">
+  <button  class="game-button" onclick="window.location.href='cadastro.html'">
+
+<img class="game-img" src="/includes/blackjack.jpg" width="130px" height="130px">
+   
+  </button>
+  </div>
+  <div class="game3">
+    <button  class="game-button" onclick="window.location.href='cadastro.html'">
+
+<img class="game-img" src="/includes/blackjack.jpg" width="130px" height="130px">
+   
+  </button>
+  </div>
+  <div class="game4">
+    <button  class="game-button" onclick="window.location.href='cadastro.html'">
+
+<img class="game-img" src="/includes/blackjack.jpg" width="130px" height="130px">
+   
+  </button>
+  </div>
+
+
+
+
+<script src="/assets/script.js"></script>
+
+
   </body>
 </html>

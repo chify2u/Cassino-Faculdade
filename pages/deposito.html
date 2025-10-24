@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depósito</title>
+    <link rel="stylesheet" href="/assets/saque_deposito.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="menu">
+        <button onclick="menu.hidden ^= 1" class="perfil-btn">
+          <img src="/includes/perfil_logo.png" alt="Perfil" />
+        </button>
+        <ul id="menu" class="menu-list" hidden>
+          <li class="list"><a href="/pages/home.html">Inicio</a></li>
+          <li class="list"><a href="/pages/perfil.html">Perfil</a></li>
+          <li class="list"><a href="/pages/saque.html">Saque</a></li>
+          <li class="list"><a href="#">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-sidebar">
+      <aside class="sidebar">
+        <ul>
+          <li class="active">Depósito</li>
+          <li><a href="saque.html">Saque</a></li>
+        </ul>
+      </aside>
+
+      <div class="container">
+        <div class="main-content">
+          <h2>Fazer Depósito</h2>
+          <p class="text_info">
+            Escolha o método de pagamento e insira as informações abaixo.
+          </p>
+
+          <form>
+            <div class="form-group">
+              <label class="form-label">Método de depósito</label>
+              <select>
+                <option value="pix">Pix</option>
+                <option value="boleto">Boleto bancário</option>
+                <option value="transferencia">Depósito bancário</option>
+                <option value="cartao">Cartão de crédito</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Valor (R$)</label>
+              <input type="text" placeholder="Ex: 50.00" />
+            </div>
+            <div class="saldo" id="unidade">
+              Saldo: R$<span id="saldo">0,00</span>
+            </div>
+
+            <div class="form-button">
+              <button type="button" class="deposito-btn">Depositar</button>
+            </div>
+          </form>
+
+          <div class="tabela-historico">
+            <h3>Histórico de Depósitos</h3>
+            <table>
+              <thead class="table-head">
+                <tr>
+                  <th>Data</th>
+                  <th>Método</th>
+                  <th>Valor</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody class="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/script.js"></script>
+  </body>
+</html>

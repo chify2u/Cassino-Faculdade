@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/assets/perfil.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="menu">
+        <button onclick="menu.hidden ^= 1" class="perfil-btn">
+          <img src="/includes/perfil_logo.png" alt="Perfil" />
+        </button>
+        <ul id="menu" class="menu-list" hidden>
+          <li class="list"><a href="/pages/home.html">Inicio</a></li>
+          <li class="list"><a href="#">Depósito</a></li>
+          <li class="list"><a href="#">Saque</a></li>
+          <li class="list"><a href="#">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-sidebar">
+      <div class="sidebar">
+        <ul>
+          <li><a href="perfil.html"> Informações</a></li>
+          <li><a href="seguranca.html"> Segurança</a></li>
+          <li class="active">Histórico</li>
+          <li><a href="suporte.html"> Suporte</a></li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="main-content">
+          <div class="secoes">
+            <!-- HISTÓRICO -->
+            <div id="historico" class="section active">
+              <div class="container">
+                <h2>Seu Histórico</h2>
+                <br />
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Data</th>
+                      <th>Jogo</th>
+                      <th>Valor Apostado</th>
+                      <th>Resultado</th>
+                      <th>Ganho</th>
+                      <th>Saldo Final</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Data">23/10/2025 18:42</td>
+                      <td data-label="Jogo">Roleta</td>
+                      <td data-label="Valor Apostado">R$ 50,00</td>
+                      <td data-label="Resultado" class="vitoria">Vitória</td>
+                      <td data-label="Ganho">R$ 100,00</td>
+                      <td data-label="Saldo Final">R$ 350,00</td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Data">23/10/2025 17:15</td>
+                      <td data-label="Jogo">Blackjack</td>
+                      <td data-label="Valor Apostado">R$ 30,00</td>
+                      <td data-label="Resultado" class="derrota">Derrota</td>
+                      <td data-label="Ganho">R$ 0,00</td>
+                      <td data-label="Saldo Final">R$ 250,00</td>
+                    </tr>
+
+                    <tr>
+                      <td data-label="Data">22/10/2025 21:30</td>
+                      <td data-label="Jogo">Caça-Níquel</td>
+                      <td data-label="Valor Apostado">R$ 10,00</td>
+                      <td data-label="Resultado" class="empate">Empate</td>
+                      <td data-label="Ganho">R$ 10,00</td>
+                      <td data-label="Saldo Final">R$ 280,00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/script.js"></script>
+  </body>
+</html>

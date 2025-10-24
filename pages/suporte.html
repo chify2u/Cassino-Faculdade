@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/assets/perfil.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="menu">
+        <button onclick="menu.hidden ^= 1" class="perfil-btn">
+          <img src="/includes/perfil_logo.png" alt="Perfil" />
+        </button>
+        <ul id="menu" class="menu-list" hidden>
+          <li class="list"><a href="/pages/home.html">Inicio</a></li>
+          <li class="list"><a href="#">Depósito</a></li>
+          <li class="list"><a href="#">Saque</a></li>
+          <li class="list"><a href="#">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-sidebar">
+      <div class="sidebar">
+        <ul>
+          
+         
+     
+          <li><a href="perfil.html">Informações</a> </li>
+          <li><a href="seguranca.html"> Segurança</a></li>
+          <li > <a href="historico.html"> Histórico</a></li>
+          <li   class="active"> Suporte</li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="main-content">
+          <div class="secoes">
+
+            <!-- SUPORTE -->
+            <div id="suporte" class="section active">
+              <h2>Formulário de Suporte</h2>
+              <br />
+              <div class="form-wrapper">
+                <section class="form-items">
+                  <div class="form-row">
+                    <label class="form-label" for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <br />
+                  <div class="form-row">
+                    <label class="form-label" for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="assunto" required />
+                    <br />
+                  </div>
+                  <br />
+                  <div class="form-row">
+                    <label class="form-label" for="descricao">Descrição:</label>
+                    <textarea
+                      type="text"
+                      id="desc"
+                      name="descricao"
+                      required
+                    ></textarea>
+                    <br />
+                  </div>
+
+                  <div class="form-button">
+                    <button type="submit">Enviar</button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    <script src="/assets/script.js"></script>
+  </body>
+</html>

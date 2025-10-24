@@ -73,71 +73,133 @@ function fecharOverlaylogin() {
   document.getElementById("overlay-login").style.display = "none";
 }
 
-function showSection(id) {
-  const sections = document.querySelectorAll(".section");
-  sections.forEach((section) => section.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
-
 let saldo = parseFloat(localStorage.getItem("saldo")) || 0;
-let historico = JSON.parse(localStorage.getItem("historico")) || [];
 
-const saldoEls = Array.from(document.querySelectorAll("#saldo, #saldo2"));
-const listaHistoricoEl = document.getElementById("listaHistorico");
+let historicoDepositos =
+  JSON.parse(localStorage.getItem("historicoDepositos")) || [];
+let historicoSaques = JSON.parse(localStorage.getItem("historicoSaques")) || [];
 
-function atualizarTela() {
-  saldoEls.forEach((el) => {
-    el.textContent = saldo.toFixed(2).replace(".", ",");
+function atualizarSaldo() {
+  const saldoSpan = document.getElementById("saldo");
+  if (saldoSpan) saldoSpan.textContent = saldo.toFixed(2).replace(".", ",");
+}
+
+function atualizarHistorico() {
+  const tabelaBody = document.querySelector(".table-body");
+  if (!tabelaBody) return;
+
+  tabelaBody.innerHTML = "";
+
+  const isDeposito = document.querySelector(".deposito-btn") !== null;
+  const historico = isDeposito ? historicoDepositos : historicoSaques;
+
+  historico.forEach((item) => {
+    const novaLinha = document.createElement("tr");
+    novaLinha.innerHTML = `
+      <td>${item.data}</td>
+      <td>${item.metodo}</td>
+      <td>R$ ${item.valor.toFixed(2).replace(".", ",")}</td>
+      <td class="${
+        item.status === "Aprovado" ? "status-aprovado" : "status-pendente"
+      }">${item.status}</td>
+    `;
+    tabelaBody.prepend(novaLinha);
   });
+}
 
-  if (listaHistoricoEl) {
-    listaHistoricoEl.innerHTML = "";
-    historico.forEach((item) => {
-      const div = document.createElement("div");
-      div.classList.add(
-        "historico-item",
-        item.tipo === "Depósito" ? "deposito-item" : "saque-item"
-      );
-      div.textContent = `${item.tipo}: R$ ${item.valor
-        .toFixed(2)
-        .replace(".", ",")} — ${item.data}`;
-      listaHistoricoEl.prepend(div);
-    });
+function depositar(event) {
+  event.preventDefault();
+
+  const metodoSelect = document.querySelector("select");
+  const valorInput = document.querySelector("input[placeholder*='Ex: 50.00']");
+
+  if (!metodoSelect || !valorInput) return;
+
+  const metodo = metodoSelect.value;
+  const valor = parseFloat(valorInput.value.replace(",", "."));
+
+  if (isNaN(valor) || valor <= 0) {
+    alert("Informe um valor válido para o depósito.");
+    return;
   }
-}
 
-function salvar() {
-  localStorage.setItem("saldo", saldo);
-  localStorage.setItem("historico", JSON.stringify(historico));
-}
-
-function depositar() {
-  const valor = parseFloat(document.getElementById("valor")?.value);
-  if (!valor || valor <= 0) return alert("Informe um valor válido.");
   saldo += valor;
-  historico.push({
-    tipo: "Depósito",
-    valor,
-    data: new Date().toLocaleString(),
-  });
-  salvar();
-  atualizarTela();
-  document.getElementById("valor").value = "";
+  localStorage.setItem("saldo", saldo);
+
+  const deposito = {
+    data: new Date().toLocaleDateString("pt-BR"),
+    metodo: metodo.charAt(0).toUpperCase() + metodo.slice(1),
+    valor: valor,
+    status: "Aprovado",
+  };
+  historicoDepositos.push(deposito);
+  localStorage.setItem(
+    "historicoDepositos",
+    JSON.stringify(historicoDepositos)
+  );
+
+  valorInput.value = "";
+  atualizarSaldo();
+  atualizarHistorico();
+  alert("Depósito realizado com sucesso!");
 }
 
-function sacar() {
-  const valor = parseFloat(document.getElementById("valor")?.value);
-  if (!valor || valor <= 0) return alert("Informe um valor válido.");
-  if (valor > saldo) return alert("Saldo insuficiente.");
+function sacar(event) {
+  event.preventDefault();
+
+  const metodoSelect = document.querySelector("select");
+  const contaInput = document.querySelector(
+    "input[placeholder*='Pix ou conta']"
+  );
+  const valorInput = document.querySelector("input[placeholder*='Ex: 50.00']");
+
+  if (!metodoSelect || !contaInput || !valorInput) return;
+
+  const metodo = metodoSelect.value;
+  const conta = contaInput.value.trim();
+  const valor = parseFloat(valorInput.value.replace(",", "."));
+
+  if (!conta) {
+    alert("Informe sua chave Pix ou conta bancária.");
+    return;
+  }
+
+  if (isNaN(valor) || valor <= 0) {
+    alert("Informe um valor válido para o saque.");
+    return;
+  }
+
+  if (valor > saldo) {
+    alert("Saldo insuficiente.");
+    return;
+  }
+
   saldo -= valor;
-  historico.push({
-    tipo: "Saque",
-    valor,
-    data: new Date().toLocaleString(),
-  });
-  salvar();
-  atualizarTela();
-  document.getElementById("valor").value = "";
+  localStorage.setItem("saldo", saldo);
+
+  const saque = {
+    data: new Date().toLocaleDateString("pt-BR"),
+    metodo: metodo.charAt(0).toUpperCase() + metodo.slice(1),
+    valor: valor,
+    status: "Aprovado",
+  };
+  historicoSaques.push(saque);
+  localStorage.setItem("historicoSaques", JSON.stringify(historicoSaques));
+
+  contaInput.value = "";
+  valorInput.value = "";
+  atualizarSaldo();
+  atualizarHistorico();
+  alert("Saque realizado com sucesso!");
 }
 
-atualizarTela();
+document.addEventListener("DOMContentLoaded", () => {
+  const depositoBtn = document.querySelector(".deposito-btn");
+  const saqueBtn = document.querySelector(".saque-btn");
+
+  if (depositoBtn) depositoBtn.addEventListener("click", depositar);
+  if (saqueBtn) saqueBtn.addEventListener("click", sacar);
+
+  atualizarSaldo();
+  atualizarHistorico();
+});

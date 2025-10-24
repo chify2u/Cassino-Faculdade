@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saque</title>
+    <link rel="stylesheet" href="/assets/saque_deposito.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="menu">
+        <button onclick="menu.hidden ^= 1" class="perfil-btn">
+          <img src="/includes/perfil_logo.png" alt="Perfil" />
+        </button>
+        <ul id="menu" class="menu-list" hidden>
+          <li class="list"><a href="/pages/home.html">Inicio</a></li>
+          <li class="list"><a href="/pages/perfil.html">Perfil</a></li>
+          <li class="list"><a href="/pages/deposito.html">Depósito</a></li>
+          <li class="list"><a href="#">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-sidebar">
+      <aside class="sidebar">
+        <ul>
+          <li><a href="deposito.html">Depósito</a></li>
+          <li class="active">Saque</li>
+        </ul>
+      </aside>
+
+      <div class="container">
+        <div class="main-content">
+          <h2>Solicitar Saque</h2>
+          <p class="text_info">
+            Preencha as informações para solicitar seu saque.
+          </p>
+
+          <form>
+            <div class="form-group">
+              <label class="form-label">Método de saque</label>
+              <select>
+                <option value="pix">Pix</option>
+                <option value="transferencia">Transferência bancária</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Chave Pix ou conta bancária</label>
+              <input type="text" placeholder="Informe sua chave Pix ou conta" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Valor (R$)</label>
+              <input type="text" placeholder="Ex: 50.00" />
+            </div>
+            <div class="saldo" id="unidade">
+              Saldo: R$<span id="saldo">0,00</span>
+            </div>
+
+            <div class="form-button">
+              <button type="button" class="saque-btn">Sacar</button>
+            </div>
+          </form>
+
+          <div class="tabela-historico">
+            <h3>Histórico de Saques</h3>
+            <table>
+              <thead class="table-head">
+                <tr>
+                  <th>Data</th>
+                  <th>Método</th>
+                  <th>Valor</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody class="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/script.js"></script>
+  </body>
+</html>
