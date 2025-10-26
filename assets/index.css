@@ -27,11 +27,6 @@ a {
   z-index: 1000;
 }
 
-.navbar h2 {
-  color: #04551fe5;
-  font-weight: 700;
-}
-
 .menu a {
   margin: 0 15px;
   color: #fff;
@@ -42,7 +37,7 @@ a {
   color: #045f27;
 }
 
-.auth-buttons button {
+.open-buttons button {
   margin-left: 10px;
   background-color: #ffffff;
   border: none;
@@ -156,7 +151,6 @@ label {
   font-family: "Montserrat";
   cursor: pointer;
   position: absolute;
-  margin-top: 12%;
 }
 
 .p-cadastro,
@@ -189,7 +183,7 @@ p {
   background-color: #1e1e1e;
   height: 20px;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 input[type="text"]:focus,
@@ -275,7 +269,8 @@ input:-moz-autofill {
 }
 
 .welcome-banner {
-  background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #121212 100%);
+  background: linear-gradient(135deg, #121212, #1f1f1f);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   width: 80vw;
   height: 350px;
   margin: auto;
@@ -294,9 +289,10 @@ input:-moz-autofill {
   max-width: 50%;
 }
 
-.content-left h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+.content-left h1 .highlight {
+  color: #28a745; /* verde */
+  position: relative;
+  animation: glow 2.5s infinite alternate;
 }
 
 .content-left p {
@@ -319,11 +315,13 @@ input:-moz-autofill {
   border: none;
   border-radius: 5px;
   transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 8px rgba(255, 204, 0, 0.4);
 }
 
 .cta-button:hover {
   transform: scale(1.05);
   background-color: #ffe066;
+  box-shadow: 0 6px 12px rgba(255, 224, 102, 0.6);
 }
 
 .banner-img {

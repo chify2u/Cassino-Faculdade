@@ -254,12 +254,6 @@ button {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-input[type="submit"]:hover,
-button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #ff0000, #cc0000);
-}
-
 #desc {
   height: 100px;
 }

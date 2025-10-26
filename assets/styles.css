@@ -56,18 +56,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.deposito-btn {
-  height: 30px;
-  background: #025e11;
-  display: flex;
-  align-items: center;
-  border: solid 2px #025e11;
-  border-radius: 5px;
-  justify-content: center;
-  margin: 0 15px 1px 15px;
-  padding: 1px 3px;
-}
-
 .saldo {
   height: 30px;
   background: #aaaaaa48;
@@ -143,7 +131,8 @@ h1 {
 }
 
 .welcome-banner {
-  background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 50%, #121212 100%);
+  background: linear-gradient(135deg, #121212, #1f1f1f);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   width: 80vw;
   height: 350px;
   margin: auto;
@@ -151,7 +140,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 30px 20px 30px;
   box-sizing: border-box;
   color: #fff;
   font-family: "Montserrat";
