@@ -17,17 +17,56 @@ body {
   align-items: center;
   box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
-.menu {
-  justify-content: center;
+.main-content {
+  background: none;
+  min-height: 400px;
+}
+.container-content {
+  flex: 1;
+  padding: 40px;
+  background: none;
+}
+.container-sidebar {
   display: flex;
-  margin-right: 4%;
+  min-height: calc(100vh - 60px);
+}
+.sidebar {
+  background-color: #121212;
+  width: 220px;
+  padding-top: 40px;
+  box-shadow: 8px 0 0px rgba(0, 0, 0, 0.2);
 }
 
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 25px;
+  border-left: 4px solid transparent;
+  font-size: 16px;
+  cursor: pointer;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background-color: #1a1a1a;
+  border-left: 4px solid #045f27;
+  color: #045f27;
+  font-weight: 700;
+}
+.menu {
+  display: flex;
+  margin-right: 37%;
+  align-items: center;
+  justify-content: center;
+}
 .menu a {
   margin: 0 15px;
   color: #fff;
@@ -71,65 +110,6 @@ h1 {
   color: white;
 }
 
-.quadrado a {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  justify-content: center;
-  margin: auto;
-  font-weight: bold;
-  padding: 5px 15px;
-}
-
-.perfil-btn {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
-  margin-left: -150%;
-}
-
-.perfil-btn img {
-  height: 40px;
-  border-radius: 50%;
-}
-
-.menu-list-container {
-  position: relative;
-  display: inline-block;
-}
-
-.menu-list {
-  position: absolute;
-  top: 120%;
-  right: 10%;
-  border: 1px solid #ccc;
-  background: rgb(97, 96, 96);
-  list-style: none;
-  padding: 0;
-  margin: 5px 0 0 0;
-  min-width: 150px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-}
-
-.list {
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-  text-align: center;
-  cursor: pointer;
-}
-
-.list:last-child {
-  border-bottom: none;
-}
-
-.list:hover {
-  background: #f2f2f2;
-}
-
 .welcome-banner {
   background: linear-gradient(135deg, #121212, #1f1f1f);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
@@ -140,7 +120,6 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px 20px 30px;
   box-sizing: border-box;
   color: #fff;
   font-family: "Montserrat";
@@ -285,7 +264,6 @@ h1 {
 footer {
   background-color: #121212;
   padding: 30px;
-  margin-top: 80px;
   text-align: center;
   color: #b3b3b3;
 }
