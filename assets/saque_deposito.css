@@ -28,19 +28,18 @@ a {
   z-index: 1000;
 }
 
-.perfil-btn {
+.options-btn {
   border: none;
   background: none;
   cursor: pointer;
   padding: 0;
-  margin-left: -100%;
+  margin-left: -150%;
 }
 
-.perfil-btn img {
-  height: 40px;
-  border-radius: 50%;
-  margin-top: 5px;
-  margin-left: -100%;
+.options-btn img {
+  height: 30px;
+  margin-top: 10px;
+  margin-left: -150%;
 }
 
 .menu {
@@ -108,8 +107,8 @@ a {
 .sidebar ul li:hover,
 .sidebar ul li.active {
   background-color: #1a1a1a;
-  border-left: 4px solid #e60000;
-  color: #e60000;
+  border-left: 4px solid #045f27;
+  color: #045f27;
   font-weight: 700;
 }
 
